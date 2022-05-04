@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const handleOnSave = async (post) => {
-    const res = await createPost(post);
+    await createPost(post);
     setAllPosts([...allPosts, post]);
     navigate("/", {replace: true});
   };
@@ -40,7 +40,7 @@ function App() {
   };
 
   const onDelete = async (id) => {
-    const res = await deletePost(id);
+    await deletePost(id);
     const copyOfPosts = allPosts.filter((item) => item._id !== id);
     setAllPosts(copyOfPosts);
     navigate("/", {replace: true});
