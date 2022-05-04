@@ -1,4 +1,4 @@
-const SERVER_URL = id => `http://localhost:8000/post/${id}/comments/`
+const SERVER_URL = id => `${process.env.REACT_APP_API_URL}/post/${id}/comments/`
 
 export const getComments = async postId => {
 	console.log("Fetching comments");
